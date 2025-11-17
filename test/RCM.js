@@ -269,6 +269,6 @@ test('toFile', t => {
     const fileI = cp.execSync(`file --mime ${pathFile}`);
     const charset = fileI.toString().match(/charset=(.*)/);
 
-    t.is(charset[1], 'iso-8859-1');
+    t.is(charset[1], 'utf-8');
   });
 });
