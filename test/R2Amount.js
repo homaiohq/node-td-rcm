@@ -2,7 +2,7 @@ import test from 'ava';
 import R2Amount from '../lib/R2Amount';
 import IndicativeArea from '../lib/indicativeArea/IndicativeArea';
 import AmountIndicativeArea from '../lib/indicativeArea/AmountIndicativeArea';
-import {TaxCredit, FixedIncomeProducts, CrowdfundingProducts, Fees} from '../lib/amountItems';
+import {TaxCredit, FixedIncomeProducts, CrowdfundingProducts, Fees, SaleOfSecurities} from '../lib/amountItems';
 
 const indicativeArea = new IndicativeArea({
   year: '2016',
@@ -43,8 +43,9 @@ test('export', t => {
   const fixedIncomeProducts = new FixedIncomeProducts({AR: 142, AS: 10});
   const crowdfundingProducts = new CrowdfundingProducts({KR: 153, KS: 21});
   const fees = new Fees(9);
+  const saleOfSecurities = new SaleOfSecurities({AN: 666, AK: 999});
 
-  const r2 = new R2Amount({amountIndicativeArea, taxCredit, fixedIncomeProducts, crowdfundingProducts, fees});
+  const r2 = new R2Amount({amountIndicativeArea, taxCredit, fixedIncomeProducts, crowdfundingProducts, fees, saleOfSecurities});
 
   require('fs').writeFileSync('toto.txt', JSON.stringify(r2.export()));
 
@@ -61,7 +62,7 @@ test('export', t => {
     '0000000000',
     '0000000000',
     '0000000010',
-    '0000000000',
+    '          ',
     '0000000000',
     '0000000000',
     '0000000000',
@@ -73,8 +74,8 @@ test('export', t => {
     '0000000000',
     '0000000000',
     '0000000000',
-    '0000000000',
-    '0000000000',
+    '0000000666',
+    '0000000999',
     '0000000000',
     '0000000000',
     '0000000000',
@@ -82,12 +83,19 @@ test('export', t => {
     '0000000010',
     '0000000153',
     '0000000021',
-    '                                                                      ',
+    '0000000000',
+    '0000000000',
+    '0000000000',
+    '0000000000',
+    '0000000000',
+    '0000000000',
+    '0000000000',
     '0000000000',
     '0000000000',
     '0000000009',
     '0000000000',
     '0000000000',
-    '                   '
+    '0000000000',
+    '                                                                                                                                                                                                                                                                                                                                                                                           '
   ]);
 });

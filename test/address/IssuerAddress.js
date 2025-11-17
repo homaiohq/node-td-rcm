@@ -79,7 +79,7 @@ test('export minimum values', t => {
     'tototototototototototototo',
     '20170125',
     '              ',
-    '                                                                                                                                                                               '
+    '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 '
   ]);
 });
 
@@ -128,6 +128,6 @@ test('export minimum values', t => {
     'tototototototototototototo',
     '20170125',
     '73282932000074',
-    '                                                                                                                                                                               '
+    '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 '
   ]);
 });

@@ -56,7 +56,7 @@ test('export minimum values', t => {
     ' ',
     '    ',
     '    ',
-    '    '
+    '                                                                                                                                                                                                                                                                                                                                                                                      '
   ]);
 });
 
@@ -106,6 +106,6 @@ test('export maximum values', t => {
     ' ',
     '1234',
     '0125',
-    '    '
+    '                                                                                                                                                                                                                                                                                                                                                                                      '
   ]);
 });

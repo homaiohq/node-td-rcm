@@ -64,5 +64,5 @@ test('throw on export is data is invalid', t => {
 });
 
 test('default', t => {
-  t.deepEqual(CrowdfundingProducts.default(), ['0000000000', '0000000000', '                                                                      ']);
+  t.deepEqual(CrowdfundingProducts.default(), ['0000000000', '0000000000']);
 });

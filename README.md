@@ -12,7 +12,8 @@ npm i td-rcm
 
 ## Usage
 
-```
+```js
+
 import {
   IndicativeArea,
   IssuerAddress,
@@ -69,7 +70,7 @@ const r1 = new R1Recipient({
     zipCode: '75009',
     officeDistributor: 'Paris'
   })
-}
+})
 /* */
 
 /*
@@ -81,7 +82,7 @@ const crowdfundingProducts = new CrowdfundingProducts({KR: 78, KS: 2});
 const incomeSubjectToIncomeTax = new IncomeSubjectToIncomeTax({BU: 38});
 
 const r2 = new R2Amount({
-  amountIndicativeArea: indicativeArea.amountR2(), 
+  amountIndicativeArea: indicativeArea.amountR2(),
   taxCredit,
   incomeSubjectToIncomeTax,
   fixedIncomeProducts,

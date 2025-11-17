@@ -172,6 +172,6 @@ test('R1Recipient export', t => {
     ' ',
     '    ',
     '    ',
-    '    '
+    '                                                                                                                                                                                                                                                                                                                                                                                      ',
   ]);
 });

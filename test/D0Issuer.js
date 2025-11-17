@@ -71,6 +71,6 @@ test('D0Issuer export', t => {
     'Paris                     ',
     '20161224',
     '              ',
-    '                                                                                                                                                                               '
+    '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 '
   ]);
 });
