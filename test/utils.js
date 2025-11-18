@@ -1,5 +1,5 @@
 import test from 'ava';
-import {numberPad, wordPad, fillWith, fillWithPattern} from '../lib/utils.js';
+import {numberPad, wordPad, fillWith, fillWithPattern} from '../lib/utils';
 
 [{
   word: 'start',
