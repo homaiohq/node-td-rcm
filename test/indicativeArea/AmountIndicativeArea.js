@@ -65,10 +65,10 @@ test('export', t => {
     key: '你好'
   },
   errors: {
-    establishmentCode: ['Establishment code can only contain char from Ox20 to 0x7E'],
-    branchCode: ['Branch code can only contain char from Ox20 to 0x7E'],
-    accountNumber: ['Account number can only contain char from Ox20 to 0x7E'],
-    key: ['Key can only contain char from Ox20 to 0x7E']
+    establishmentCode: ['Establishment code can only contain ASCII characters (0x20-0x7E) and their accented versions (Latin-1 Supplement)'],
+    branchCode: ['Branch code can only contain ASCII characters (0x20-0x7E) and their accented versions (Latin-1 Supplement)'],
+    accountNumber: ['Account number can only contain ASCII characters (0x20-0x7E) and their accented versions (Latin-1 Supplement)'],
+    key: ['Key can only contain ASCII characters (0x20-0x7E) and their accented versions (Latin-1 Supplement)']
   }
 }].forEach(({data, errors}) => {
   test(`validation ${JSON.stringify(data)}`, t => {
