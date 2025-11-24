@@ -62,8 +62,8 @@ test('export', t => {
 }, {
   data: {socialReason: '你好', issuerCodeLegalCategory: '我们法国'},
   errors: {
-    socialReason:['Social reason can only contain char from Ox20 to 0x7E'],
-    issuerCodeLegalCategory: ['Issuer code legal category can only contain char from Ox20 to 0x7E']
+    socialReason:['Social reason can only contain ASCII characters (0x20-0x7E) and their accented versions (Latin-1 Supplement)'],
+    issuerCodeLegalCategory: ['Issuer code legal category can only contain ASCII characters (0x20-0x7E) and their accented versions (Latin-1 Supplement)']
   }
 }].forEach(({data, errors}) => {
   test(`validation ${JSON.stringify(data)}`, t => {
