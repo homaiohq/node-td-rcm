@@ -59,3 +59,5 @@ typings/
 
 dist/
 docs/
+types/
+lib/index.cjs
