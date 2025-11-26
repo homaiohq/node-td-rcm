@@ -60,8 +60,23 @@ test('R1Recipient validation', t => {
 [{
   data: {
     recipient: {
+      socialReason: 'Lendix SA',
+      siret: 'ABCDEFGHIJKLMNOP',
+    },
+    recipientType: 1,
+  },
+  errors: {
+    siret: [
+      'Siret is the wrong length (should be 14 characters)',
+      'Siret is not a number'
+    ]
+  }
+},{
+  data: {
+    recipient: {
       socialReason: 'Lendix SA'
     },
+    recipientType: 1,
     birth: {
       year: 1980,
       month: 5,
@@ -91,6 +106,7 @@ test('R1Recipient validation', t => {
 }, {
   data: {
     recipient: {},
+    recipientType: 1,
     birth: {
       year: 1980,
       month: 5,
@@ -102,7 +118,7 @@ test('R1Recipient validation', t => {
   errors: { socialReason: ['Social reason can\'t be blank'] }
 }].forEach(({ data, errors }) => {
   test(`validation ${JSON.stringify(data)}`, t => {
-    const r1 = new R1Recipient({ recipientIndicativeArea, recipientType: data.recipientType || 1, recipient: data.recipient, birth: data.birth, recipientAddress });
+    const r1 = new R1Recipient({ recipientIndicativeArea, recipientType: data.recipientType, recipient: data.recipient, birth: data.birth, recipientAddress });
 
     if (!errors) {
       t.true(r1.validation());
