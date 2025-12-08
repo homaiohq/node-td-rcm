@@ -80,6 +80,8 @@ const taxCredit = new TaxCredit({AD: 9});
 const fixedIncomeProducts = new FixedIncomeProducts({AR: 38});
 const crowdfundingProducts = new CrowdfundingProducts({KR: 78, KS: 2});
 const incomeSubjectToIncomeTax = new IncomeSubjectToIncomeTax({BU: 38});
+const saleOfSecurities = new SaleOfSecurities({AN: 666, AK: 999});
+
 
 const r2 = new R2Amount({
   amountIndicativeArea: indicativeArea.amountR2(),
@@ -87,6 +89,7 @@ const r2 = new R2Amount({
   incomeSubjectToIncomeTax,
   fixedIncomeProducts,
   crowdfundingProducts
+  saleOfSecurities,
   // ...
 });
 /* */
@@ -113,6 +116,5 @@ catch (e) {
 We only implemented what we needed:
 
 R3, R4 are not implemented
-Only 5 blocks are implemented on R2
 
 Don't hesitate to pull-request new block ;)
