@@ -9,4 +9,4 @@ git config user.name \"Codeship\" && \
 git config user.email \"github@codeship.com\" && \
 git add . && \
 git commit -m "[skip ci] Deploy docs for version $(node -e 'process.stdout.write(require("../package.json").version)')" && \
-git push --force "${GIT_DEPLOY_REPO}" master:gh-pages
+git push --force "${GIT_DEPLOY_REPO}" HEAD:gh-pages
