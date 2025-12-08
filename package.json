@@ -1,6 +1,6 @@
 {
   "name": "@homaiohq/td-rcm",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "",
   "type": "module",
   "main": "./lib/index.js",
@@ -12,6 +12,10 @@
       "require": "./lib/index.cjs"
     }
   },
+  "files": [
+    "lib/",
+    "types/"
+  ],
   "scripts": {
     "build": "rm -rf types && tsc",
     "build:cjs": "tsup lib/index.js --format cjs --out-dir lib --no-splitting --target node14",
