@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>index.cjs - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="AmountIndicative.html">AmountIndicative</a></li><li><a href="CrowdfundingProducts.html">CrowdfundingProducts</a><ul class='methods'><li data-type='method'><a href="CrowdfundingProducts.html#export">export</a></li><li data-type='method'><a href="CrowdfundingProducts.html#export">export</a></li></ul></li><li></li><li><a href="D0Issuer.html">D0Issuer</a></li><li></li><li><a href="global.html#Fees">Fees</a></li><li></li><li><a href="FixedIncomeProducts.html">FixedIncomeProducts</a></li><li></li><li><a href="IncomeSubjectToIncomeTax.html">IncomeSubjectToIncomeTax</a></li><li></li><li><a href="IndicativeArea.html">IndicativeArea</a><ul class='methods'><li data-type='method'><a href="IndicativeArea.html#amountR2">amountR2</a></li><li data-type='method'><a href="IndicativeArea.html#amountR2">amountR2</a></li><li data-type='method'><a href="IndicativeArea.html#issuer">issuer</a></li><li data-type='method'><a href="IndicativeArea.html#issuer">issuer</a></li><li data-type='method'><a href="IndicativeArea.html#recipient">recipient</a></li><li data-type='method'><a href="IndicativeArea.html#recipient">recipient</a></li></ul></li><li></li><li><a href="global.html#IssuerAddress">IssuerAddress</a></li><li></li><li><a href="IssuerIndicativeArea.html">IssuerIndicativeArea</a></li><li><a href="R1Recipient.html">R1Recipient</a></li><li></li><li><a href="global.html#R2Amount">R2Amount</a></li><li></li><li><a href="global.html#RCM">RCM</a><ul class='methods'><li data-type='method'><a href="global.html#RCM#addRecipient">addRecipient</a></li><li data-type='method'><a href="global.html#RCM#addRecipient">addRecipient</a></li><li data-type='method'><a href="global.html#RCM#export">export</a></li><li data-type='method'><a href="global.html#RCM#export">export</a></li></ul></li><li></li><li><a href="global.html#RecipientAddress">RecipientAddress</a></li><li></li><li><a href="RecipientIndicativeArea.html">RecipientIndicativeArea</a></li><li><a href="SaleOfSecurities.html">SaleOfSecurities</a></li><li></li><li><a href="T0Totalization.html">T0Totalization</a></li><li></li><li><a href="TaxCredit.html">TaxCredit</a></li><li></li></ul><h3>Modules</h3><ul><li><a href="module-utils.html">utils</a><ul class='methods'><li data-type='method'><a href="module-utils.html#~fillWith">fillWith</a></li><li data-type='method'><a href="module-utils.html#~fillWithPattern">fillWithPattern</a></li><li data-type='method'><a href="module-utils.html#~wordPad">wordPad</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#detectStreetType">detectStreetType</a></li><li><a href="global.html#formatAddressToDGFIP">formatAddressToDGFIP</a></li><li><a href="global.html#normalizeText">normalizeText</a></li><li><a href="global.html#parseAddress">parseAddress</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">index.cjs</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from &amp;&amp; typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) &amp;&amp; key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// lib/index.js
+var index_exports = {};
+__export(index_exports, {
+  CrowdfundingProducts: () => CrowdfundingProducts_default,
+  D0Issuer: () => D0Issuer_default,
+  Fees: () => Fees_default,
+  FixedIncomeProducts: () => FixedIncomeProducts_default,
+  IncomeSubjectToIncomeTax: () => IncomeSubjectToIncomeTax_default,
+  IndicativeArea: () => IndicativeArea_default,
+  IssuerAddress: () => IssuerAddress_default,
+  R1Recipient: () => R1Recipient_default,
+  R2Amount: () => R2Amount_default,
+  RCM: () => RCM_default,
+  RecipientAddress: () => RecipientAddress_default,
+  SaleOfSecurities: () => SaleOfSecurities_default,
+  TaxCredit: () => TaxCredit_default,
+  formatAddressToDGFIP: () => formatAddressToDGFIP
+});
+module.exports = __toCommonJS(index_exports);
+
+// lib/RCM.js
+var import_fs = __toESM(require("fs"), 1);
+
+// lib/utils/addressFormatter.js
+function normalizeText(text) {
+  if (!text) return "";
+  return text.replace(/[\u2018\u2019\u201A\u201B]/g, "'").replace(/[\u201C\u201D\u201E\u201F]/g, '"').replace(/[\u2010\u2011\u2012\u2013\u2014\u2015]/g, "-").replace(/\u2026/g, "...").replace(/\u00A0/g, " ").replace(/[\u200B\u200C\u200D\uFEFF]/g, "");
+}
+var STREET_TYPES = [
+  { patterns: ["grande rue", "grand rue", "grand'place"], code: "GR" },
+  { patterns: ["grande place", "grand place"], code: "GPL" },
+  { patterns: ["route nationale"], code: "N" },
+  { patterns: ["route d\xE9partementale", "route departementale"], code: "D" },
+  { patterns: ["vieux chemin"], code: "VCHE" },
+  { patterns: ["vieille route"], code: "VTE" },
+  { patterns: ["petite route"], code: "PRT" },
+  { patterns: ["petite rue"], code: "PTR" },
+  { patterns: ["petite avenue"], code: "PAE" },
+  { patterns: ["petite all\xE9e", "petite allee"], code: "PTA" },
+  { patterns: ["petit chemin"], code: "PCH" },
+  { patterns: ["grand boulevard"], code: "GBD" },
+  { patterns: ["chemin communal"], code: "CC" },
+  { patterns: ["chemin d\xE9partemental", "chemin departemental"], code: "CD" },
+  { patterns: ["chemin forestier"], code: "CF" },
+  { patterns: ["chemin vicinal"], code: "CHV" },
+  { patterns: ["chemin rural"], code: "CR" },
+  { patterns: ["voie communale"], code: "VC" },
+  { patterns: ["zone d'am\xE9nagement concert\xE9", "zone d'amenagement concerte", "zac"], code: "ZAC" },
+  { patterns: ["zone d'am\xE9nagement diff\xE9r\xE9", "zone d'amenagement differe", "zad"], code: "ZAD" },
+  { patterns: ["zone \xE0 urbaniser en priorit\xE9", "zone a urbaniser en priorite", "zup"], code: "ZUP" },
+  { patterns: ["zone artisanale"], code: "ZA" },
+  { patterns: ["zone industrielle"], code: "ZI" },
+  { patterns: ["rond-point", "rond point"], code: "RPT" },
+  { patterns: ["terre-plein", "terre plein", "terreplein"], code: "TPL" },
+  { patterns: ["bretelle", "bretelle d'autoroute"], code: "BRTL" },
+  { patterns: ["a\xE9rodrome", "aerodrome"], code: "AER" },
+  { patterns: ["agglom\xE9ration", "agglomeration"], code: "AGL" },
+  { patterns: ["ancien chemin"], code: "ACH" },
+  { patterns: ["ancienne route"], code: "ART" },
+  { patterns: ["autoroute"], code: "AUT" },
+  { patterns: ["avenue", "av"], code: "AV" },
+  { patterns: ["barri\xE8re", "barriere"], code: "BRE" },
+  { patterns: ["boulevard", "bd"], code: "BD" },
+  { patterns: ["carri\xE8re", "carriere"], code: "CARE" },
+  { patterns: ["carriera"], code: "CAE" },
+  { patterns: ["carrefour"], code: "CAR" },
+  { patterns: ["caserne"], code: "CASR" },
+  { patterns: ["centre"], code: "CTRE" },
+  { patterns: ["chalet", "ch\xE2let"], code: "CHL" },
+  { patterns: ["chauss\xE9e", "chaussee"], code: "CHS" },
+  { patterns: ["chemin", "chem"], code: "CHE" },
+  { patterns: ["cheminement"], code: "CHEM" },
+  { patterns: ["ch\xE2teau", "chateau"], code: "CHT" },
+  { patterns: ["cit\xE9", "cite"], code: "CITE" },
+  { patterns: ["corniche"], code: "COR" },
+  { patterns: ["coursive"], code: "CIVE" },
+  { patterns: ["descente"], code: "DSC" },
+  { patterns: ["d\xE9viation", "deviation"], code: "DEVI" },
+  { patterns: ["domaine"], code: "DOM" },
+  { patterns: ["draille"], code: "DRA" },
+  { patterns: ["\xE9cart", "ecart"], code: "ECA" },
+  { patterns: ["\xE9cluse", "ecluse"], code: "ECL" },
+  { patterns: ["embranchement"], code: "EMBR" },
+  { patterns: ["enclave"], code: "ENV" },
+  { patterns: ["espace"], code: "ESPA" },
+  { patterns: ["esplanade"], code: "ESP" },
+  { patterns: ["escalier"], code: "ESC" },
+  { patterns: ["\xE9tang", "etang"], code: "ETNG" },
+  { patterns: ["faubourg", "fg"], code: "FG" },
+  { patterns: ["fontaine"], code: "FON" },
+  { patterns: ["galerie"], code: "GAL" },
+  { patterns: ["gr\xE8ve", "greve"], code: "GREV" },
+  { patterns: ["habitation"], code: "HAB" },
+  { patterns: ["hameau"], code: "HAM" },
+  { patterns: ["impasse", "imp"], code: "IMP" },
+  { patterns: ["jet\xE9e", "jetee"], code: "JTE" },
+  { patterns: ["lev\xE9e", "levee"], code: "LEVE" },
+  { patterns: ["lotissement"], code: "LOT" },
+  { patterns: ["march\xE9", "marche"], code: "MAR" },
+  { patterns: ["mont\xE9e", "montee"], code: "MTE" },
+  { patterns: ["nouvelle route"], code: "NTE" },
+  { patterns: ["passage", "pas"], code: "PAS" },
+  { patterns: ["passerelle"], code: "PLE" },
+  { patterns: ["placette"], code: "PTTE" },
+  { patterns: ["promenade", "prom"], code: "PROM" },
+  { patterns: ["quartier"], code: "QUA" },
+  { patterns: ["raccourci"], code: "RAC" },
+  { patterns: ["r\xE9sidence", "residence"], code: "RES" },
+  { patterns: ["rocade"], code: "ROC" },
+  { patterns: ["rotonde"], code: "RTD" },
+  { patterns: ["ruelle"], code: "RLE" },
+  { patterns: ["ruellette"], code: "RULT" },
+  { patterns: ["ruisseau"], code: "RUIS" },
+  { patterns: ["sentier", "sen"], code: "SEN" },
+  { patterns: ["terrasse"], code: "TSSE" },
+  { patterns: ["traverse"], code: "TRA" },
+  { patterns: ["venelle"], code: "VEN" },
+  { patterns: ["viaduc"], code: "VIAD" },
+  { patterns: ["village"], code: "VGE" },
+  { patterns: ["aire"], code: "AIRE" },
+  { patterns: ["all\xE9e", "allee", "all"], code: "ALL" },
+  { patterns: ["angle"], code: "ANGL" },
+  { patterns: ["arcade"], code: "ARC" },
+  { patterns: ["base"], code: "BASE" },
+  { patterns: ["bassin"], code: "BSN" },
+  { patterns: ["berge"], code: "BER" },
+  { patterns: ["bourg"], code: "BRG" },
+  { patterns: ["calle"], code: "CALL" },
+  { patterns: ["camin"], code: "CAMI" },
+  { patterns: ["camping"], code: "CPG" },
+  { patterns: ["canal"], code: "CAN" },
+  { patterns: ["champ"], code: "CHP" },
+  { patterns: ["chasse"], code: "CHA" },
+  { patterns: ["clos"], code: "CLOS" },
+  { patterns: ["coin"], code: "COIN" },
+  { patterns: ["contour"], code: "CTR" },
+  { patterns: ["coron"], code: "CORO" },
+  { patterns: ["c\xF4te", "cote"], code: "COTE" },
+  { patterns: ["couloir"], code: "CLR" },
+  { patterns: ["cour"], code: "COUR" },
+  { patterns: ["cours"], code: "CRS" },
+  { patterns: ["croix"], code: "CRX" },
+  { patterns: ["darse"], code: "DARS" },
+  { patterns: ["digue"], code: "DIG" },
+  { patterns: ["enclos"], code: "ENC" },
+  { patterns: ["ferme"], code: "FRM" },
+  { patterns: ["fort"], code: "FORT" },
+  { patterns: ["foss\xE9", "fosse"], code: "FOS" },
+  { patterns: ["gare"], code: "GARE" },
+  { patterns: ["halage"], code: "HLG" },
+  { patterns: ["halle"], code: "HLE" },
+  { patterns: ["\xEEle", "ile"], code: "ILE" },
+  { patterns: ["\xEElot", "ilot"], code: "ILOT" },
+  { patterns: ["jardin"], code: "JARD" },
+  { patterns: ["lices"], code: "LICE" },
+  { patterns: ["ligne"], code: "LIGN" },
+  { patterns: ["mail"], code: "MAIL" },
+  { patterns: ["maison"], code: "MAIS" },
+  { patterns: ["marina"], code: "MRN" },
+  { patterns: ["parc"], code: "PARC" },
+  { patterns: ["parking"], code: "PKG" },
+  { patterns: ["parvis"], code: "PRV" },
+  { patterns: ["passe"], code: "PASS" },
+  { patterns: ["phare"], code: "PHAR" },
+  { patterns: ["piste"], code: "PIST" },
+  { patterns: ["placa"], code: "PLA" },
+  { patterns: ["place", "pl"], code: "PL" },
+  { patterns: ["placis"], code: "PLCI" },
+  { patterns: ["plage"], code: "PLAG" },
+  { patterns: ["plaine"], code: "PLN" },
+  { patterns: ["plan"], code: "PLAN" },
+  { patterns: ["plateau"], code: "PLT" },
+  { patterns: ["pointe"], code: "PNT" },
+  { patterns: ["pont"], code: "PONT" },
+  { patterns: ["port"], code: "PORT" },
+  { patterns: ["porte"], code: "PTE" },
+  { patterns: ["portique"], code: "PORQ" },
+  { patterns: ["poste"], code: "POST" },
+  { patterns: ["poterne"], code: "POT" },
+  { patterns: ["quai"], code: "QUAI" },
+  { patterns: ["rampe"], code: "RPE" },
+  { patterns: ["ravine"], code: "RVE" },
+  { patterns: ["rempart"], code: "REM" },
+  { patterns: ["rive"], code: "RIVE" },
+  { patterns: ["route", "rte"], code: "RTE" },
+  { patterns: ["rue"], code: "RUE" },
+  { patterns: ["ruet"], code: "RUET" },
+  { patterns: ["square", "sq"], code: "SQ" },
+  { patterns: ["stade"], code: "STDE" },
+  { patterns: ["tertre"], code: "TRT" },
+  { patterns: ["tour"], code: "TOUR" },
+  { patterns: ["tunnel"], code: "TUN" },
+  { patterns: ["vallon"], code: "VALL" },
+  { patterns: ["villa"], code: "VLA" },
+  { patterns: ["ville"], code: "VIL" },
+  { patterns: ["voie"], code: "VOIE" },
+  { patterns: ["voirie"], code: "VOIR" },
+  { patterns: ["voute", "vo\xFBte"], code: "VOUT" },
+  { patterns: ["voyeul"], code: "VOY" },
+  { patterns: ["zone"], code: "ZONE" },
+  { patterns: ["bord"], code: "BORD" },
+  { patterns: ["camp"], code: "CAMP" },
+  { patterns: ["col"], code: "COL" },
+  { patterns: ["mas"], code: "MAS" },
+  { patterns: ["lac"], code: "LAC" },
+  { patterns: ["sas"], code: "SAS" },
+  { patterns: ["val"], code: "VAL" },
+  { patterns: ["via"], code: "VIA" },
+  { patterns: ["hlm"], code: "HLM" }
+];
+function detectStreetType(address) {
+  const addressLower = address.toLowerCase();
+  let bestMatch = null;
+  for (const { patterns, code } of STREET_TYPES) {
+    for (const pattern of patterns) {
+      const regex = new RegExp(`(?:^|\\s)${pattern}(?:\\s|$)`, "i");
+      const match = addressLower.match(regex);
+      if (match &amp;&amp; match.index !== void 0) {
+        const position = match.index;
+        if (!bestMatch || position &lt; bestMatch.position || position === bestMatch.position &amp;&amp; pattern.length > bestMatch.matched.length) {
+          bestMatch = {
+            code: code.padEnd(4, " "),
+            matched: pattern,
+            position
+          };
+        }
+      }
+    }
+  }
+  if (bestMatch) {
+    return { code: bestMatch.code, matched: bestMatch.matched };
+  }
+  return { code: "    ", matched: "" };
+}
+function parseAddress(address, address2) {
+  let complement = "";
+  let workingAddress = address.trim();
+  workingAddress = workingAddress.replace(/^(\d+)\s*,\s*/, "$1 ");
+  const parts = workingAddress.split(",").map((p) => p.trim());
+  if (parts.length > 1) {
+    const mainAddress = parts[0];
+    const additionalParts = parts.slice(1);
+    workingAddress = mainAddress;
+    complement = additionalParts.join(", ");
+  } else {
+    const apartmentPatterns = [
+      /\s+(appt\.?|appartement|batiment|bâtiment|escalier|etage|étage|residence|résidence)\s*[a-z0-9\-]+/gi
+    ];
+    for (const pattern of apartmentPatterns) {
+      const match = workingAddress.match(pattern);
+      if (match) {
+        complement = match[0].trim();
+        workingAddress = workingAddress.replace(pattern, " ").trim();
+        break;
+      }
+    }
+  }
+  if (address2 &amp;&amp; address2.trim()) {
+    complement = address2.trim();
+  }
+  const numberMatch = workingAddress.match(/^(\d{1,4})\s*(?:(BIS|TER|QUATER)\b|([BTQA])\b|(\d)(?!\d))?/i);
+  let streetNumber = "0000";
+  let repetitionIndex = " ";
+  if (numberMatch) {
+    streetNumber = numberMatch[1].padStart(4, "0");
+    const suffix = numberMatch[2] || numberMatch[3] || numberMatch[4];
+    if (suffix) {
+      const suffixUpper = suffix.toUpperCase();
+      if (suffixUpper === "BIS") {
+        repetitionIndex = "B";
+      } else if (suffixUpper === "TER") {
+        repetitionIndex = "T";
+      } else if (suffixUpper === "QUATER") {
+        repetitionIndex = "Q";
+      } else {
+        repetitionIndex = suffixUpper.charAt(0);
+      }
+    }
+    workingAddress = workingAddress.substring(numberMatch[0].length).trim();
+  }
+  const { code: streetType, matched } = detectStreetType(workingAddress);
+  let streetName = workingAddress;
+  if (matched) {
+    const regex = new RegExp(`(?:^|\\s)${matched}(?:\\s|$)`, "i");
+    streetName = workingAddress.replace(regex, " ").trim();
+  }
+  streetName = streetName.replace(/\s+/g, " ").replace(/\s*,\s*/g, ", ").trim();
+  if (streetName.length > 21) {
+    if (streetName.includes(",")) {
+      let truncated = streetName.substring(0, 21);
+      if (truncated.length === 21 &amp;&amp; streetName[21] !== " " &amp;&amp; streetName[21] !== ",") {
+        const lastSpace = truncated.lastIndexOf(" ");
+        const lastComma = truncated.lastIndexOf(",");
+        const breakPoint = Math.max(lastSpace, lastComma);
+        if (breakPoint > 0) {
+          truncated = truncated.substring(0, breakPoint);
+        }
+      }
+      streetName = truncated;
+    } else {
+      const words = streetName.split(/\s+/);
+      const lastWord = words[words.length - 1];
+      let truncated = lastWord;
+      for (let i = words.length - 2; i >= 0; i--) {
+        const candidate = words[i] + " " + truncated;
+        if (candidate.length &lt;= 21) {
+          truncated = candidate;
+        } else {
+          break;
+        }
+      }
+      streetName = truncated;
+    }
+  }
+  return {
+    streetNumber,
+    repetitionIndex,
+    streetType,
+    streetName,
+    complement: complement.substring(0, 32).padEnd(32, " ")
+  };
+}
+function formatAddressToDGFIP(input) {
+  const { address, address2, city, postalCode } = input;
+  const normalizedAddress = normalizeText(address);
+  const normalizedAddress2 = address2 ? normalizeText(address2) : null;
+  const normalizedCity = normalizeText(city);
+  const components = parseAddress(normalizedAddress, normalizedAddress2);
+  const r131 = components.streetType + " " + components.streetName.substring(0, 21).padEnd(21, " ");
+  let cleanedCity = normalizedCity.trim();
+  cleanedCity = cleanedCity.replace(/^\d{5}\s*-?\s*/, "");
+  cleanedCity = cleanedCity.replace(/\s*-?\s*\d{5}$/, "");
+  const normalizedCityUpper = cleanedCity.toUpperCase().substring(0, 26).padEnd(26, " ");
+  const normalizedPostalCode = postalCode.padStart(5, "0").substring(0, 5);
+  return {
+    R127: components.complement,
+    R128: components.streetNumber,
+    R129: components.repetitionIndex,
+    R130: " ",
+    R131: r131,
+    R132: "00000",
+    R133: " ",
+    R134: normalizedCityUpper,
+    R135: normalizedPostalCode,
+    R136: " ",
+    R137: normalizedCityUpper
+  };
+}
+
+// lib/utils/index.js
+function wordPad(word = "", length, char = " ") {
+  const cur = word.length;
+  if (length &lt;= cur) {
+    return word;
+  }
+  const masked = length - cur;
+  let filler = char;
+  while (filler.length &lt; masked) {
+    filler += filler;
+  }
+  const fillerSlice = filler.slice(0, masked);
+  return word + fillerSlice;
+}
+function numberPad(text = "", max, mask = "0") {
+  text = String(text);
+  const cur = text.length;
+  if (max &lt;= cur) {
+    return String(text);
+  }
+  const masked = max - cur;
+  let filler = String(mask) || " ";
+  while (filler.length &lt; masked) {
+    filler += filler;
+  }
+  const fillerSlice = filler.slice(0, masked);
+  return fillerSlice + text;
+}
+function fillWith(char, length = 1) {
+  return Array(length).fill(char).join("");
+}
+function fillWithPattern(pattern) {
+  const result = [];
+  pattern = pattern.match(/(\d+(?:X|N))/g);
+  if (!pattern) {
+    throw new Error("invalid pattern");
+  }
+  pattern.forEach((block) => {
+    const op = block.match(/(\d+)(X|N)/);
+    const size = parseInt(op[1], 10);
+    const char = op[2] === "X" ? " " : "0";
+    result.push(Array(size).fill(char).join(""));
+  });
+  return result;
+}
+
+// lib/T0Totalization.js
+var T0Totalization = class {
+  /**
+   * @param  {RCM} rcm
+   */
+  constructor(rcm) {
+    this.rcm = rcm;
+  }
+  export() {
+    const records = this.rcm.recipients.reduce((acc, recipient) => {
+      acc.r1++;
+      if (recipient[1]) {
+        acc.r2++;
+      }
+      if (recipient[2]) {
+        acc.r3++;
+      }
+      if (recipient[3]) {
+        acc.r4++;
+      }
+      return acc;
+    }, {
+      r1: 0,
+      r2: 0,
+      r3: 0,
+      r4: 0
+    });
+    return [
+      this.rcm.d0.issuerIndicativeArea.common.data.year,
+      this.rcm.d0.issuerIndicativeArea.common.data.siret,
+      this.rcm.d0.issuerIndicativeArea.common.data.type,
+      fillWith("9", 30),
+      "T0",
+      numberPad(records.r1, 8),
+      numberPad(records.r2, 8),
+      numberPad(records.r3, 8),
+      numberPad(records.r4, 8),
+      wordPad(this.rcm.personInCharge.fullname, 50),
+      numberPad(this.rcm.personInCharge.phone, 10),
+      wordPad(this.rcm.personInCharge.email, 60),
+      wordPad(this.rcm.d0.issuerIndicativeArea.common.data.siret.substring(0, 9), 9),
+      // T014 reserved, filled with spaces
+      fillWith(" ", 588)
+    ];
+  }
+};
+var T0Totalization_default = T0Totalization;
+
+// lib/RCM.js
+var RCM = class {
+  /**
+   * @param  {D0Issuer} d0
+   * @param  {Object}   [personInCharge]
+   * @param  {String}   [personInCharge.fullname]  T010 Nom Prénom
+   * @param  {String}   [personInCharge.phone]     T011 Numéro de téléphone
+   * @param  {String}   [personInCharge.email]     T012 Adresse courriel
+   */
+  constructor(d0, personInCharge = {}) {
+    this.d0 = d0;
+    this.personInCharge = personInCharge;
+    this.recipients = [];
+  }
+  /**
+   * Add Recipient
+   *
+   * @param {R1Recipient} r1
+   * @param {R2Amount}    [r2]
+   * @param {Object}      [r3] unimplemented
+   * @param {Object}      [r4] unimplemented
+   */
+  addRecipient(r1, r2, r3, r4) {
+    const recipient = [r1];
+    if (r2 !== void 0) recipient.push(r2);
+    if (r3 !== void 0) recipient.push(r3);
+    if (r4 !== void 0) recipient.push(r4);
+    this.recipients.push(recipient);
+  }
+  /**
+   * Export data
+   *
+   * @param  {Boolean} [inline=false] Set to `true` for inline export
+   * @return {String|Array}
+   */
+  export(inline = false) {
+    const t0 = new T0Totalization_default(this).export();
+    const d0 = this.d0.export();
+    const exportedRecipient = this.recipients.reduce((acc, r) => {
+      try {
+        const r0 = r[0].export();
+        const r1 = r[1].export();
+        return acc.concat(inline ? [
+          "\n",
+          ...r0,
+          "\n",
+          ...r1
+        ] : [
+          ...r0,
+          ...r1
+        ]);
+      } catch (err) {
+        throw err;
+      }
+    }, []);
+    return inline ? [
+      ...d0,
+      ...exportedRecipient,
+      "\n",
+      ...t0
+    ].join("") : [
+      ...d0,
+      ...exportedRecipient,
+      ...t0
+    ];
+  }
+  toFile(filename) {
+    return new Promise((resolve, reject) => {
+      try {
+        const exportedRcm = this.export(true);
+        import_fs.default.writeFile(filename, exportedRcm, "utf-8", (err) => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve();
+        });
+      } catch (err) {
+        return reject(err);
+      }
+    });
+  }
+};
+var RCM_default = RCM;
+
+// lib/indicativeArea/IndicativeArea.js
+var import_validate4 = __toESM(require("validate.js"), 1);
+
+// lib/Validation.js
+function ValidationError(errors = {}) {
+  this.name = "ValidationError";
+  this.errors = errors;
+}
+ValidationError.prototype = Error.prototype;
+var validationChar = {
+  format: {
+    pattern: /^[\x20-\x7E\u00C0-\u00FF]*$/,
+    message: "can only contain ASCII characters (0x20-0x7E) and their accented versions (Latin-1 Supplement)"
+  }
+};
+
+// lib/indicativeArea/IssuerIndicativeArea.js
+var import_validate = __toESM(require("validate.js"), 1);
+var IssuerIndicativeArea = class {
+  constructor(common, issuer) {
+    this.common = common;
+    this.data = issuer;
+  }
+  export() {
+    this.validation();
+    return [
+      ...this.common.export(),
+      fillWith("0", 30),
+      "D0",
+      wordPad(this.data.socialReason, 50),
+      numberPad(this.data.issuerCodeLegalCategory, 4)
+    ];
+  }
+  validation() {
+    this.common.validation();
+    const issuerSchema = {
+      socialReason: {
+        presence: true,
+        length: { maximum: 50 },
+        ...validationChar
+      },
+      issuerCodeLegalCategory: {
+        length: { is: 4 },
+        ...validationChar
+      }
+    };
+    const invalid = (0, import_validate.default)(this.data, issuerSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+};
+var IssuerIndicativeArea_default = IssuerIndicativeArea;
+
+// lib/indicativeArea/RecipientIndicativeArea.js
+var import_validate2 = __toESM(require("validate.js"), 1);
+var RecipientIndicativeArea = class {
+  constructor(common, recipient) {
+    this.common = common;
+    this.data = recipient;
+  }
+  export() {
+    this.validation();
+    return [
+      ...this.common.export(),
+      wordPad(this.data.establishmentCode, 9),
+      wordPad(this.data.branchCode, 5),
+      wordPad(this.data.accountNumber, 14),
+      wordPad(this.data.key, 2),
+      "R1",
+      wordPad(this.data.accountNature, 1),
+      wordPad(this.data.accountType, 1),
+      this.data.recipientCode
+    ];
+  }
+  validation() {
+    this.common.validation();
+    const recipientSchema = {
+      accountNature: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 1,
+          lessThanOrEqualTo: 3
+        }
+      },
+      accountType: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 1,
+          lessThanOrEqualTo: 6
+        }
+      },
+      recipientCode: {
+        presence: true,
+        inclusion: ["B", "T"]
+      }
+    };
+    const invalid = (0, import_validate2.default)(this.data, recipientSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+};
+var RecipientIndicativeArea_default = RecipientIndicativeArea;
+
+// lib/indicativeArea/AmountIndicativeArea.js
+var import_validate3 = __toESM(require("validate.js"), 1);
+var AmountIndicative = class {
+  constructor(common, amountCode, amount = {}) {
+    this.common = common;
+    this.amountCode = amountCode;
+    this.data = amount;
+  }
+  export() {
+    this.validation();
+    return [
+      ...this.common.export(),
+      wordPad(this.data.establishmentCode, 9),
+      wordPad(this.data.branchCode, 5),
+      wordPad(this.data.accountNumber, 14),
+      wordPad(this.data.key, 2),
+      this.amountCode
+    ];
+  }
+  validation() {
+    this.common.validation();
+    const amountSchema = {
+      establishmentCode: {
+        length: { maximum: 9 },
+        ...validationChar
+      },
+      branchCode: {
+        length: { is: 5 },
+        ...validationChar
+      },
+      accountNumber: {
+        length: { maximum: 14 },
+        ...validationChar
+      },
+      key: {
+        length: { is: 2 },
+        ...validationChar
+      }
+    };
+    const invalid = (0, import_validate3.default)(this.data, amountSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+};
+var AmountIndicativeArea_default = AmountIndicative;
+
+// lib/indicativeArea/IndicativeArea.js
+var IndicativeArea = class {
+  /**
+   * @param  {Object}  indicativeArea
+   * @param  {String}  indicativeArea.year   D 001 / R 101 / R 201  Année
+   * @param  {String}  indicativeArea.siret  D 002 / R 102 / R 202 Numéro SIRET du déclarant au 31/12/2016
+   * @param  {String}  indicativeArea.type   D 003 / R 103 / R 203 Type de déclaration
+   */
+  constructor(indicativeArea) {
+    this.data = indicativeArea;
+  }
+  /**
+   * @param  {Object}  issuer
+   * @param  {String}  issuer.socialReason               D 006 Raison sociale (désignation délivrée par l’INSEE)
+   * @param  {Number}  [issuer.issuerCodeLegalCategory]  D 007 Code catégorie juridique du déclarant
+   */
+  issuer(issuer) {
+    return new IssuerIndicativeArea_default(this, issuer);
+  }
+  /**
+   * @param  {Object}  recipient
+   * @param  {String}  [recipient.establishmentCode]  R 104 Code établissement
+   * @param  {String}  [recipient.branchCode]         R 105 Code guichet
+   * @param  {String}  [recipient.accountNumber]      R 106 Numéro de compte ou numéro de contrat
+   * @param  {String}  [recipient.key]                R 107 Clé
+   * @param  {String}  [recipient.accountNature]      R 109 Nature du compte ou du contrat
+   * @param  {String}  [recipient.accountType]        R 110 Type de compte
+   * @param  {String}  [recipient.recipientCode]      R 111 Code bénéficiaire
+   */
+  recipient(recipient) {
+    return new RecipientIndicativeArea_default(this, recipient);
+  }
+  /**
+   * @param  {Object}  amount
+   * @param  {String}  [amount.establishmentCode]  R 204 Code établissement
+   * @param  {String}  [amount.branchCode]         R 205 Code guichet
+   * @param  {String}  [amount.accountNumber]      R 206 Numéro de compte ou numéro de contrat
+   * @param  {String}  [amount.key]                R 207 Clé
+   */
+  amountR2(amount) {
+    return new AmountIndicativeArea_default(this, "R2", amount);
+  }
+  export() {
+    this.validation();
+    return [
+      this.data.year,
+      this.data.siret,
+      this.data.type
+    ];
+  }
+  validation() {
+    const commonSchema = {
+      year: {
+        presence: true,
+        length: { is: 4 },
+        ...validationChar
+      },
+      siret: {
+        presence: true,
+        length: { is: 14 },
+        ...validationChar
+      },
+      type: {
+        presence: true,
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 1,
+          lessThanOrEqualTo: 2
+        }
+      }
+    };
+    const invalid = (0, import_validate4.default)(this.data, commonSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+};
+var IndicativeArea_default = IndicativeArea;
+
+// lib/address/Address.js
+var import_validate5 = __toESM(require("validate.js"), 1);
+var Address = class {
+  constructor(type, address) {
+    this.type = type;
+    this.data = address;
+  }
+  export() {
+    const common = [
+      wordPad(this.data.additionalAddress, 32, " "),
+      numberPad(this.data.streetNumber, 4),
+      wordPad(this.data.additionalStreetNumber, 1, " "),
+      " ",
+      wordPad(this.data.streetName, 26, " "),
+      numberPad(this.data.inseeCode, 5),
+      " ",
+      wordPad(this.data.city, 26, " "),
+      this.data.zipCode,
+      " ",
+      wordPad(this.data.officeDistributor, 26)
+    ];
+    return this.type === 1 ? [
+      ...common,
+      this.data.issuanceDate,
+      wordPad(this.data.oldSiret, 14, " "),
+      fillWith(" ", 545)
+    ] : [
+      ...common,
+      " ",
+      wordPad(this.data.legalCategoryCode, 4),
+      wordPad(this.data.referencePeriod, 4),
+      fillWith(" ", 374)
+    ];
+  }
+  validation() {
+    const commonSchema = {
+      additionalAddress: {
+        length: { maximum: 32 },
+        ...validationChar
+      },
+      streetNumber: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999
+        }
+      },
+      additionalStreetNumber: {
+        inclusion: ["B", "T", "Q", "C", " "]
+      },
+      streetName: {
+        length: { maximum: 26 },
+        ...validationChar
+      },
+      inseeCode: {
+        length: { maximum: 5 },
+        ...validationChar
+      },
+      city: {
+        length: { maximum: 26 },
+        ...validationChar
+      },
+      zipCode: {
+        presence: true,
+        length: { is: 5 },
+        ...validationChar
+      },
+      officeDistributor: {
+        presence: true,
+        length: { maximum: 26 },
+        ...validationChar
+      }
+    };
+    const issuerAddressSchema = {
+      ...commonSchema,
+      issuanceDate: {
+        presence: true,
+        length: { is: 8 },
+        format: {
+          pattern: "^[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$"
+        }
+      },
+      oldSiret: {
+        length: { is: 14 },
+        ...validationChar
+      }
+    };
+    const recipientAddressSchema = {
+      ...commonSchema,
+      legalCategoryCode: {
+        length: { is: 4 },
+        ...validationChar
+      },
+      referencePeriod: {
+        length: { is: 4 },
+        ...validationChar
+      }
+    };
+    const invalid = (0, import_validate5.default)(this.data, this.type === 1 ? issuerAddressSchema : recipientAddressSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+};
+var Address_default = Address;
+
+// lib/address/IssuerAddress.js
+var IssuerAddress = class extends Address_default {
+  /**
+   * @param  {Object}  address
+   * @param  {String}  [address.additionalAddress]       D 009 Complément d'adresse
+   * @param  {String}  [address.streetNumber]            D 010 Numéro dans la voie
+   * @param  {String}  [address.additionalStreetNumber]  D 011 B, T, Q, C
+   * @param  {String}  [address.streetName]              D 013 Nature et nom de la voie
+   * @param  {String}  [address.inseeCode]               D 014 Code INSEE des communes
+   * @param  {String}  [address.city]                    D 015 Libellé commune
+   * @param  {String}  address.zipCode                   D 017 Code postal
+   * @param  {String}  address.officeDistributor         D 019 Bureau distributeur
+   * @param  {String}  address.issuanceDate              D 020 Date d'émission de la déclaration
+   * @param  {String}  [address.oldSiret]                D 021 Numéro de SIRET au 31/12/2015 en cas de changement
+   */
+  constructor(address) {
+    super(1, address);
+  }
+};
+var IssuerAddress_default = IssuerAddress;
+
+// lib/address/RecipientAddress.js
+var RecipientAddress = class extends Address_default {
+  /**
+   * @param  {Object}  address
+   * @param  {String}  [address.additionalAddress]       R 127 Complément d'adresse
+   * @param  {String}  [address.streetNumber]            R 128 Numéro dans la voie
+   * @param  {String}  [address.additionalStreetNumber]  R 129 Complément d'adresse
+   * @param  {String}  [address.streetName]              R 131 Nature et nom de la voie
+   * @param  {String}  [address.inseeCode]               R 132 Code INSEE des communes
+   * @param  {String}  [address.city]                    R 134 Libellé commune
+   * @param  {String}  address.zipCode                   R 135 Code postal
+   * @param  {String}  address.officeDistributor         R 137 Bureau distributeur
+   * @param  {String}  [address.legalCategoryCode]       R 139 Code catégorie juridique
+   * @param  {String}  [address.referencePeriod]         R 140 Période de référence
+   */
+  constructor(address) {
+    super(2, address);
+  }
+};
+var RecipientAddress_default = RecipientAddress;
+
+// lib/amountItems/Fees.js
+var import_validate6 = __toESM(require("validate.js"), 1);
+var Fees = class {
+  /**
+   * @param {Number}  fees  R251 - 2CA Montant des frais
+   */
+  constructor(fees) {
+    this.fees = fees;
+  }
+  export() {
+    this.validation();
+    return [
+      numberPad(this.fees, 10)
+    ];
+  }
+  validation() {
+    const feesSchema = {
+      presence: true,
+      numericality: {
+        onlyInteger: true,
+        greaterThanOrEqualTo: 0,
+        lessThanOrEqualTo: 9999999999
+      }
+    };
+    const invalid = (0, import_validate6.default)({ fees: this.fees }, { fees: feesSchema });
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+  static default() {
+    return fillWithPattern("10N");
+  }
+};
+var Fees_default = Fees;
+
+// lib/amountItems/FixedIncomeProducts.js
+var import_validate7 = __toESM(require("validate.js"), 1);
+var FixedIncomeProducts = class {
+  /**
+   * @param {Object}  fixedIncomeProducts
+   * @param {Number}  [fixedIncomeProducts.AR]  R237 - 2TR Produits ou gains
+   * @param {Number}  [fixedIncomeProducts.AS]  R238 Pertes
+   */
+  constructor(fixedIncomeProducts) {
+    this.fixedIncomeProducts = fixedIncomeProducts;
+  }
+  export() {
+    this.validation();
+    return [
+      numberPad(this.fixedIncomeProducts.AR, 10),
+      numberPad(this.fixedIncomeProducts.AS, 10)
+    ];
+  }
+  validation() {
+    const fixedIncomeProductsSchema = {
+      AR: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      },
+      AS: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      }
+    };
+    const invalid = (0, import_validate7.default)(this.fixedIncomeProducts, fixedIncomeProductsSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+  static default() {
+    return fillWithPattern("10N10N");
+  }
+};
+var FixedIncomeProducts_default = FixedIncomeProducts;
+
+// lib/amountItems/CrowdfundingProducts.js
+var import_validate8 = __toESM(require("validate.js"), 1);
+var CrowdfundingProducts = class {
+  /**
+   * @param {Object}  crowdfundingProducts
+   * @param {Number}  [crowdfundingProducts.KR]  R239 - 2TT Gains (PRODUITS DES MINIBONS ET DES PRÊTS DANS LE CADRE DU FINANCEMENT PARTICIPATIF)
+   * @param {Number}  [crowdfundingProducts.KS]  R240 - 2TU Pertes
+   */
+  constructor(crowdfundingProducts) {
+    this.crowdfundingProducts = crowdfundingProducts;
+  }
+  /**
+   * Will write KR/KS or set it to 0
+   * @return {string[]}
+   */
+  export() {
+    this.validation();
+    return [
+      numberPad(this.crowdfundingProducts.KR, 10),
+      numberPad(this.crowdfundingProducts.KS, 10)
+    ];
+  }
+  validation() {
+    const basicFieldsNumberCheck = {
+      numericality: {
+        onlyInteger: true,
+        greaterThanOrEqualTo: 0,
+        lessThanOrEqualTo: 9999999999
+      }
+    };
+    const crowdfundingProductsSchema = {
+      KR: basicFieldsNumberCheck,
+      KS: basicFieldsNumberCheck
+    };
+    const invalid = (0, import_validate8.default)(this.crowdfundingProducts, crowdfundingProductsSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+  static default() {
+    return fillWithPattern("10N10N");
+  }
+};
+var CrowdfundingProducts_default = CrowdfundingProducts;
+
+// lib/amountItems/IncomeSubjectToIncomeTax.js
+var import_validate9 = __toESM(require("validate.js"), 1);
+var IncomeSubjectToIncomeTax = class {
+  /**
+   * @param {Object}  incomeSubjectToIncomeTax
+   * @param {Number}  [incomeSubjectToIncomeTax.BS]  R232 - 2CG Produits de PEP, produits de bons ou contrats de capitalisation et des placements de même nature, produits soumis à cotisations RSI (sans CSG déductible)
+   * @param {Number}  [incomeSubjectToIncomeTax.DQ]  R233 - 2CG Répartitions de FCPR et distributions de SCR (sans CSG déductible)
+   * @param {Number}  [incomeSubjectToIncomeTax.BU]  R234 - 2BH Revenus déjà soumis aux prélèvements sociaux avec CSG déductible
+   */
+  constructor(incomeSubjectToIncomeTax) {
+    this.incomeSubjectToIncomeTax = incomeSubjectToIncomeTax;
+  }
+  export() {
+    this.validation();
+    return [
+      numberPad(this.incomeSubjectToIncomeTax.BS, 10),
+      numberPad(this.incomeSubjectToIncomeTax.DQ, 10),
+      numberPad(this.incomeSubjectToIncomeTax.BU, 10)
+    ];
+  }
+  validation() {
+    const incomeSubjectToIncomeTaxSchema = {
+      BS: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      },
+      DQ: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      },
+      BU: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      }
+    };
+    const invalid = (0, import_validate9.default)(this.incomeSubjectToIncomeTax, incomeSubjectToIncomeTaxSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+  static default() {
+    return fillWithPattern("10N10N10N");
+  }
+};
+var IncomeSubjectToIncomeTax_default = IncomeSubjectToIncomeTax;
+
+// lib/amountItems/SaleOfSecurities.js
+var import_validate10 = __toESM(require("validate.js"), 1);
+var SaleOfSecurities = class {
+  /**
+   * @param {Object}  saleOfSecurities
+   * @param {Number}  [saleOfSecurities.AN]  R230 Montant total des cessions
+   * @param {Number}  [saleOfSecurities.AK]  R231 Soultes reçues lors d'opérations d'échange ou d'apport de titres
+   */
+  constructor(saleOfSecurities) {
+    this.saleOfSecurities = saleOfSecurities;
+  }
+  export() {
+    this.validation();
+    return [
+      numberPad(this.saleOfSecurities.AN, 10),
+      numberPad(this.saleOfSecurities.AK, 10)
+    ];
+  }
+  validation() {
+    const saleOfSecuritiesSchema = {
+      AN: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      },
+      AK: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      }
+    };
+    const invalid = (0, import_validate10.default)(this.saleOfSecurities, saleOfSecuritiesSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+  static default() {
+    return fillWithPattern("10N10N");
+  }
+};
+var SaleOfSecurities_default = SaleOfSecurities;
+
+// lib/amountItems/TaxCredit.js
+var import_validate11 = __toESM(require("validate.js"), 1);
+var TaxCredit = class {
+  /**
+   * @param {Object}  taxCredit
+   * @param {Number}  [taxCredit.AA]  R209 - 2AB Crédit d’impôt non restituable
+   * @param {Number}  [taxCredit.AJ]  R210 - 2BG Crédit d’impôt restituable
+   * @param {Number}  [taxCredit.AD]  R211 - 2CK Crédit d’impôt prélèvement restituable
+   */
+  constructor(taxCredit) {
+    this.taxCredit = taxCredit;
+  }
+  export() {
+    this.validation();
+    return [
+      numberPad(this.taxCredit.AA, 10),
+      numberPad(this.taxCredit.AJ, 10),
+      numberPad(this.taxCredit.AD, 10)
+    ];
+  }
+  validation() {
+    const taxCreditSchema = {
+      AA: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      },
+      AJ: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      },
+      AD: {
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 0,
+          lessThanOrEqualTo: 9999999999
+        }
+      }
+    };
+    const invalid = (0, import_validate11.default)(this.taxCredit, taxCreditSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    } else {
+      return true;
+    }
+  }
+  static default() {
+    return fillWithPattern("10N10N10N");
+  }
+};
+var TaxCredit_default = TaxCredit;
+
+// lib/D0Issuer.js
+var D0Issuer = class {
+  /**
+   * @param  {IssuerIndicativeArea}  issuerIndicativeArea
+   * @param  {IssuerAddress}         issuerAddress
+   */
+  constructor(issuerIndicativeArea, issuerAddress) {
+    this.issuerIndicativeArea = issuerIndicativeArea;
+    this.issuerAddress = issuerAddress;
+  }
+  export() {
+    this.validation();
+    return [
+      ...this.issuerIndicativeArea.export(),
+      ...this.issuerAddress.export()
+    ];
+  }
+  validation() {
+    this.issuerIndicativeArea.validation();
+    this.issuerAddress.validation();
+    return true;
+  }
+};
+var D0Issuer_default = D0Issuer;
+
+// lib/R1Recipient.js
+var import_validate12 = __toESM(require("validate.js"), 1);
+var R1Recipient = class {
+  /**
+   * @param  {Object} blocks
+   * @param  {RecipientIndicativeArea} [blocks.recipientIndicativeArea]
+   * @param  {Number} [blocks.recipientType]
+   * @param  {Object} [blocks.recipient]
+   * @param  {String} [blocks.recipient.siret]           R 112 SIRET bénéficiaire
+   * @param  {String} [blocks.recipient.socialReason]    R 113 Raison social (mandatory for corporate)
+   * @param  {String} [blocks.recipient.familyname]      R 114 Nom de famille (mandatory for physical person)
+   * @param  {String} [blocks.recipient.firstnames]      R 115 Prénoms (ordre état civil) (mandatory for physical person)
+   * @param  {String} [blocks.recipient.name]            R 116 Nom d'usage
+   * @param  {Number} [blocks.recipient.sex]             R 118 Code sexe (mandatory for physical person)
+   * @param  {Object} [blocks.birth]
+   * @param  {Number} [blocks.birth.year]                R 119 Année (format YYYYMMDD)
+   * @param  {Number} [blocks.birth.month]               R 120 Mois (format MM)
+   * @param  {Number} [blocks.birth.day]                 R 121 Jour (format DD)
+   * @param  {String} [blocks.birth.departementCode]     R 122 Code département
+   * @param  {String} [blocks.birth.cityCode]            R 123 Code commune
+   * @param  {String} [blocks.birth.city]                R 124 Libellé commune
+   * @param  {String} [blocks.birth.job]                 R 126 Profession
+   * @param  {RecipientAddress} [blocks.recipientAddress]
+   */
+  constructor(blocks) {
+    [
+      "recipientIndicativeArea",
+      "recipientType",
+      "recipient",
+      "birth",
+      "recipientAddress"
+    ].forEach((blockName) => {
+      this[blockName] = blocks[blockName];
+    });
+  }
+  export() {
+    this.validation();
+    return [
+      ...this.recipientIndicativeArea.export(),
+      numberPad(this.recipient.siret, 14),
+      wordPad(this.recipient.socialReason, 50),
+      wordPad(this.recipient.familyname, 30),
+      wordPad(this.recipient.firstnames, 20),
+      wordPad(this.recipient.name, 30),
+      fillWith(" ", 20),
+      wordPad(this.recipient.sex, 1),
+      numberPad(this.birth &amp;&amp; this.birth.year, 4),
+      numberPad(this.birth &amp;&amp; this.birth.month, 2),
+      numberPad(this.birth &amp;&amp; this.birth.day, 2),
+      numberPad(this.birth &amp;&amp; this.birth.departementCode, 2),
+      numberPad(this.birth &amp;&amp; this.birth.cityCode, 3),
+      wordPad(this.birth &amp;&amp; this.birth.city, 26),
+      " ",
+      wordPad(this.birth &amp;&amp; this.birth.job, 30),
+      ...this.recipientAddress.export()
+    ];
+  }
+  validation() {
+    this.recipientIndicativeArea.validation();
+    this.recipientAddress.validation();
+    const recipientSchema = {
+      siret: {
+        length: { is: 14 }
+      },
+      socialReason: {
+        presence: this.recipientType === 1,
+        length: { maximum: 50 }
+      },
+      familyname: {
+        presence: this.recipientType === 2,
+        length: { maximum: 30 }
+      },
+      firstnames: {
+        presence: this.recipientType === 2,
+        length: { maximum: 20 }
+      },
+      name: {
+        length: { maximum: 30 }
+      },
+      sex: {
+        presence: this.recipientType === 2,
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 1,
+          lessThanOrEqualTo: 2
+        }
+      }
+    };
+    const birthSchema = {
+      year: {
+        presence: true,
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 1900,
+          lessThanOrEqualTo: 2999
+        }
+      },
+      month: {
+        presence: true,
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 1,
+          lessThanOrEqualTo: 12
+        }
+      },
+      day: {
+        presence: true,
+        numericality: {
+          onlyInteger: true,
+          greaterThanOrEqualTo: 1,
+          lessThanOrEqualTo: 31
+        }
+      },
+      departementCode: {
+        presence: true,
+        length: { is: 2 }
+      },
+      cityCode: {
+        length: { is: 3 }
+      },
+      city: {
+        presence: true,
+        length: { maximum: 26 }
+      },
+      job: {
+        length: { maximum: 30 }
+      }
+    };
+    const invalid = (0, import_validate12.default)(this.recipient, recipientSchema);
+    if (invalid) {
+      throw new ValidationError(invalid);
+    }
+    if (this.recipientType === 2) {
+      const invalid2 = (0, import_validate12.default)(this.birth, birthSchema);
+      if (invalid2) {
+        throw new ValidationError(invalid2);
+      }
+    }
+    return true;
+  }
+};
+var R1Recipient_default = R1Recipient;
+
+// lib/R2Amount.js
+var R2Amount = class {
+  /**
+   * @param  {Object}
+   * @param  {AmountIndicativeArea}     [blocks.amountIndicativeArea]
+   * @param  {TaxCredit}                [blocks.taxCredit]
+   * @param  {Object}                   [blocks.R213R224] (unimplemented)
+   * @param  {Object}                   [blocks.R226R228] (unimplemented)
+   * @param  {SaleOfSecurities}         [blocks.saleOfSecurities]
+   * @param  {IncomeSubjectToIncomeTax} [blocks.incomeSubjectToIncomeTax]
+   * @param  {FixedIncomeProducts}      [blocks.fixedIncomeProducts]
+   * @param  {CrowdfundingProducts}     [blocks.crowdfundingProducts]
+   * @param  {Object}                   [blocks.R245R248] (unimplemented)
+   * @param  {Object}                   [blocks.R252R254] (unimplemented)
+   * @param  {Object}                   [blocks.R249R250] (unimplemented)
+   * @param  {Fees}                     [blocks.fees]
+   * @param  {Object}                   [blocks.R261R262] (unimplemented)
+   * @param  {Object}                   [blocks.R264] (unimplemented)
+   */
+  constructor(blocks) {
+    [
+      "amountIndicativeArea",
+      "taxCredit",
+      "R213R224",
+      "R226R228",
+      "saleOfSecurities",
+      "incomeSubjectToIncomeTax",
+      "fixedIncomeProducts",
+      "crowdfundingProducts",
+      "R245R248",
+      "R252R254",
+      "R249R250",
+      "fees",
+      "R261R262",
+      "R264"
+    ].forEach((blockName) => {
+      this[blockName] = blocks[blockName];
+    });
+  }
+  export() {
+    return [
+      ...this.amountIndicativeArea.export(),
+      ...this.taxCredit ? this.taxCredit.export() : TaxCredit_default.default(),
+      ...fillWithPattern("10X10N10N10N10N10X10N10N10N"),
+      ...fillWithPattern("10N10N10N"),
+      ...this.saleOfSecurities ? this.saleOfSecurities.export() : SaleOfSecurities_default.default(),
+      ...this.incomeSubjectToIncomeTax ? this.incomeSubjectToIncomeTax.export() : IncomeSubjectToIncomeTax_default.default(),
+      ...this.fixedIncomeProducts ? this.fixedIncomeProducts.export() : FixedIncomeProducts_default.default(),
+      ...this.crowdfundingProducts ? this.crowdfundingProducts.export() : CrowdfundingProducts_default.default(),
+      ...fillWithPattern("10N10N10N10N"),
+      ...fillWithPattern("10N10N10N"),
+      ...fillWithPattern("10N10N"),
+      ...this.fees ? this.fees.export() : Fees_default.default(),
+      ...fillWithPattern("10N10N"),
+      ...fillWithPattern("10N"),
+      // R371 reserved area filled with spaces
+      ...fillWithPattern("379X")
+    ];
+  }
+  validation() {
+    this.amountIndicativeArea.validation();
+    if (this.taxCredit) {
+      this.taxCredit.validation();
+    }
+    if (this.grossAmountRevenues) {
+      this.grossAmountRevenues.validation();
+    }
+    if (this.saleOfSecurities) {
+      this.saleOfSecurities.validation();
+    }
+    if (this.incomeSubjectToIncomeTax) {
+      this.incomeSubjectToIncomeTax.validation();
+    }
+    if (this.fixedIncomeProducts) {
+      this.fixedIncomeProducts.validation();
+    }
+    if (this.crowdfundingProducts) {
+      this.crowdfundingProducts.validation();
+    }
+    if (this.fees) {
+      this.fees.validation();
+    }
+    return true;
+  }
+};
+var R2Amount_default = R2Amount;
+// Annotate the CommonJS export names for ESM import in node:
+0 &amp;&amp; (module.exports = {
+  CrowdfundingProducts,
+  D0Issuer,
+  Fees,
+  FixedIncomeProducts,
+  IncomeSubjectToIncomeTax,
+  IndicativeArea,
+  IssuerAddress,
+  R1Recipient,
+  R2Amount,
+  RCM,
+  RecipientAddress,
+  SaleOfSecurities,
+  TaxCredit,
+  formatAddressToDGFIP
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Mon Dec 08 2025 16:38:54 GMT+0100 (Central European Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

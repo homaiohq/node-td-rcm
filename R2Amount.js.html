@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>R2Amount.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="AmountIndicative.html">AmountIndicative</a></li><li><a href="CrowdfundingProducts.html">CrowdfundingProducts</a><ul class='methods'><li data-type='method'><a href="CrowdfundingProducts.html#export">export</a></li><li data-type='method'><a href="CrowdfundingProducts.html#export">export</a></li></ul></li><li></li><li><a href="D0Issuer.html">D0Issuer</a></li><li></li><li><a href="global.html#Fees">Fees</a></li><li></li><li><a href="FixedIncomeProducts.html">FixedIncomeProducts</a></li><li></li><li><a href="IncomeSubjectToIncomeTax.html">IncomeSubjectToIncomeTax</a></li><li></li><li><a href="IndicativeArea.html">IndicativeArea</a><ul class='methods'><li data-type='method'><a href="IndicativeArea.html#amountR2">amountR2</a></li><li data-type='method'><a href="IndicativeArea.html#amountR2">amountR2</a></li><li data-type='method'><a href="IndicativeArea.html#issuer">issuer</a></li><li data-type='method'><a href="IndicativeArea.html#issuer">issuer</a></li><li data-type='method'><a href="IndicativeArea.html#recipient">recipient</a></li><li data-type='method'><a href="IndicativeArea.html#recipient">recipient</a></li></ul></li><li></li><li><a href="global.html#IssuerAddress">IssuerAddress</a></li><li></li><li><a href="IssuerIndicativeArea.html">IssuerIndicativeArea</a></li><li><a href="R1Recipient.html">R1Recipient</a></li><li></li><li><a href="global.html#R2Amount">R2Amount</a></li><li></li><li><a href="global.html#RCM">RCM</a><ul class='methods'><li data-type='method'><a href="global.html#RCM#addRecipient">addRecipient</a></li><li data-type='method'><a href="global.html#RCM#addRecipient">addRecipient</a></li><li data-type='method'><a href="global.html#RCM#export">export</a></li><li data-type='method'><a href="global.html#RCM#export">export</a></li></ul></li><li></li><li><a href="global.html#RecipientAddress">RecipientAddress</a></li><li></li><li><a href="RecipientIndicativeArea.html">RecipientIndicativeArea</a></li><li><a href="SaleOfSecurities.html">SaleOfSecurities</a></li><li></li><li><a href="T0Totalization.html">T0Totalization</a></li><li></li><li><a href="TaxCredit.html">TaxCredit</a></li><li></li></ul><h3>Modules</h3><ul><li><a href="module-utils.html">utils</a><ul class='methods'><li data-type='method'><a href="module-utils.html#~fillWith">fillWith</a></li><li data-type='method'><a href="module-utils.html#~fillWithPattern">fillWithPattern</a></li><li data-type='method'><a href="module-utils.html#~wordPad">wordPad</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#detectStreetType">detectStreetType</a></li><li><a href="global.html#formatAddressToDGFIP">formatAddressToDGFIP</a></li><li><a href="global.html#normalizeText">normalizeText</a></li><li><a href="global.html#parseAddress">parseAddress</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">R2Amount.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {fillWithPattern} from './utils/index.js';
+import {FixedIncomeProducts, CrowdfundingProducts, TaxCredit, Fees, IncomeSubjectToIncomeTax, SaleOfSecurities} from './amountItems/index.js';
+
+/**
+ * @typedef {import('./indicativeArea/AmountIndicativeArea.js').default} AmountIndicativeArea
+ * @typedef {import('./amountItems/TaxCredit.js').default} TaxCredit
+ * @typedef {import('./amountItems/SaleOfSecurities.js').default} SaleOfSecurities
+ * @typedef {import('./amountItems/IncomeSubjectToIncomeTax.js').default} IncomeSubjectToIncomeTax
+ * @typedef {import('./amountItems/FixedIncomeProducts.js').default} FixedIncomeProducts
+ * @typedef {import('./amountItems/CrowdfundingProducts.js').default} CrowdfundingProducts
+ * @typedef {import('./amountItems/Fees.js').default} Fees
+ */
+
+/**
+ * R2Amount Class
+ *
+ * R 2 Zone
+ */
+class R2Amount {
+  /**
+   * @param  {Object}
+   * @param  {AmountIndicativeArea}     [blocks.amountIndicativeArea]
+   * @param  {TaxCredit}                [blocks.taxCredit]
+   * @param  {Object}                   [blocks.R213R224] (unimplemented)
+   * @param  {Object}                   [blocks.R226R228] (unimplemented)
+   * @param  {SaleOfSecurities}         [blocks.saleOfSecurities]
+   * @param  {IncomeSubjectToIncomeTax} [blocks.incomeSubjectToIncomeTax]
+   * @param  {FixedIncomeProducts}      [blocks.fixedIncomeProducts]
+   * @param  {CrowdfundingProducts}     [blocks.crowdfundingProducts]
+   * @param  {Object}                   [blocks.R245R248] (unimplemented)
+   * @param  {Object}                   [blocks.R252R254] (unimplemented)
+   * @param  {Object}                   [blocks.R249R250] (unimplemented)
+   * @param  {Fees}                     [blocks.fees]
+   * @param  {Object}                   [blocks.R261R262] (unimplemented)
+   * @param  {Object}                   [blocks.R264] (unimplemented)
+   */
+  constructor(blocks) {
+    [
+      'amountIndicativeArea',
+      'taxCredit',
+      'R213R224',
+      'R226R228',
+      'saleOfSecurities',
+      'incomeSubjectToIncomeTax',
+      'fixedIncomeProducts',
+      'crowdfundingProducts',
+      'R245R248',
+      'R252R254',
+      'R249R250',
+      'fees',
+      'R261R262',
+      'R264'
+    ].forEach((blockName) => {
+      this[blockName] = blocks[blockName]
+    });
+  }
+
+  export() {
+    return [
+      ...this.amountIndicativeArea.export(),
+      ...((this.taxCredit) ? this.taxCredit.export() : TaxCredit.default()),
+      ...fillWithPattern('10X10N10N10N10N10X10N10N10N'),
+      ...fillWithPattern('10N10N10N'),
+      ...((this.saleOfSecurities) ? this.saleOfSecurities.export() : SaleOfSecurities.default()),
+      ...((this.incomeSubjectToIncomeTax) ? this.incomeSubjectToIncomeTax.export() : IncomeSubjectToIncomeTax.default()),
+      ...((this.fixedIncomeProducts) ? this.fixedIncomeProducts.export() : FixedIncomeProducts.default()),
+      ...((this.crowdfundingProducts) ? this.crowdfundingProducts.export() : CrowdfundingProducts.default()),
+      ...fillWithPattern('10N10N10N10N'),
+      ...fillWithPattern('10N10N10N'),
+      ...fillWithPattern('10N10N'),
+      ...((this.fees) ? this.fees.export() : Fees.default()),
+      ...fillWithPattern('10N10N'),
+      ...fillWithPattern('10N'),
+      // R371 reserved area filled with spaces
+      ...fillWithPattern('379X')
+    ];
+  }
+
+  validation() {
+    this.amountIndicativeArea.validation();
+
+    if (this.taxCredit) {
+      this.taxCredit.validation();
+    }
+
+    if (this.grossAmountRevenues) {
+      this.grossAmountRevenues.validation();
+    }
+
+    if (this.saleOfSecurities) {
+      this.saleOfSecurities.validation();
+    }
+
+    if (this.incomeSubjectToIncomeTax) {
+      this.incomeSubjectToIncomeTax.validation();
+    }
+
+    if (this.fixedIncomeProducts) {
+      this.fixedIncomeProducts.validation();
+    }
+
+    if (this.crowdfundingProducts) {
+      this.crowdfundingProducts.validation();
+    }
+
+    if (this.fees) {
+      this.fees.validation();
+    }
+
+    return true;
+  }
+}
+
+export default R2Amount;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Mon Dec 08 2025 16:38:54 GMT+0100 (Central European Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
