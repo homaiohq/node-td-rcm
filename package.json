@@ -28,15 +28,19 @@
     "type": "git",
     "url": "git@github.com:homaiohq/node-td-rcm.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
-    "ava": "^0.17.0",
-    "docdash": "^0.4.0",
+    "ava": "^0.25.0",
+    "docdash": "^2.0.2",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.0",
-    "in-publish": "^2.0.0",
-    "jsdoc": "^3.4.3",
+    "in-publish": "^2.0.1",
+    "jsdoc": "^4.0.5",
+    "jsdoc-tsimport-plugin": "^1.0.5",
     "tsup": "^8.5.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "validate.js": "^0.13.1"

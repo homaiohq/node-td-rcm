@@ -1,15 +1,20 @@
 {
   "tags": {
-    "allowUnknownTags": false
+    "allowUnknownTags": true
   },
   "source": {
     "include": "lib/",
-    "exclude": ["lib/amountItems/index.js", "lib/address/index.js", "lib/indicativeArea/index.js"],
+    "exclude": [
+      "lib/amountItems/index.js",
+      "lib/address/index.js",
+      "lib/indicativeArea/index.js"
+    ],
     "includePattern": ".js$",
     "excludePattern": "(node_modules/|docs)"
   },
   "plugins": [
-    "plugins/markdown"
+    "plugins/markdown",
+    "jsdoc-tsimport-plugin"
   ],
   "opts": {
     "template": "node_modules/docdash",
