@@ -47,7 +47,7 @@ test('export', t => {
 
   const r2 = new R2Amount({amountIndicativeArea, taxCredit, fixedIncomeProducts, crowdfundingProducts, fees, saleOfSecurities});
 
-  require('fs').writeFileSync('toto.txt', JSON.stringify(r2.export()));
+  require('fs').writeFileSync('temp_test.txt', JSON.stringify(r2.export()));
 
 
   t.deepEqual(r2.export(), [
