@@ -1,6 +1,6 @@
 {
   "name": "@homaiohq/td-rcm",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "",
   "type": "module",
   "main": "./lib/index.js",
@@ -26,7 +26,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:homaiohq/node-td-rcm.git"
+    "url": "git+ssh://git@github.com/homaiohq/node-td-rcm.git"
   },
   "publishConfig": {
     "access": "public"
